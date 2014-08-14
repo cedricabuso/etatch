@@ -26,7 +26,6 @@ get_header(); ?>
 ?>
 
 	<div id="primary" class="content-area">
-		<center>
 		<div id="content" class="site-content" role="main">
 
 		<?php
@@ -53,7 +52,6 @@ get_header(); ?>
 		?>
 
 		</div><!-- #content -->
-		</center>	
 	</div><!-- #primary -->
 	<?php get_sidebar( 'content' ); ?>
 </div><!-- #main-content -->

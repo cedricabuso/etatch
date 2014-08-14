@@ -24,39 +24,12 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" href="/css/zerogrid.css">
-    	<link rel="stylesheet" href="/css/responsive.css">
-	<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-<header>
-	<div class="wrap-header zerogrid">
-		<div id="logo"><a href="/"><img src="/images/etatch-logo.png"/></a></div>
-		<div class="menu">
-			<ul class="navigation pull-right">
-				<li><a href="/">HOME</a></li>
-				<li><a href="/about.html">ABOUT</a></li>
-				<li><a href="/services.html">SERVICES</a></li>
-				<li><a href="/wordpress/?post_type=forum">COMMUNITY</a></li>
-				<li>
-					<a href="#">APPLY</a>
-					<ul class="sub-menu">
-			            <li><a href="#">Staff</a></li>
-			            <li><a href="/partner.html">Partners</a></li>
-			            <li><a href="#">Sponsored Network</a></li>
-			        </ul>
-				</li>
-				<li><a href="/contact.html">CONTACT</a></li>
-				<li><a href="//www.freedom.tm/login">DASHBOARD</a></li>
-			</ul>
-		</div>
-	</div>
-</header>
+
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php if ( get_header_image() ) : ?>
@@ -66,4 +39,27 @@
 		</a>
 	</div>
 	<?php endif; ?>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
+				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
 	<div id="main" class="site-main">
